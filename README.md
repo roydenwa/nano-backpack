@@ -14,6 +14,7 @@ Codebase for robotics practical (MScTI_ROBP) in summer term 2020, Heidelberg Uni
 * Zugang:
   * 50 € Pfand
   * 1 Zugang &rarr; Alex
+* peter.wittlinger@ziti.uni-heidelberg.de
 * etc.
 
 ## TODO
