@@ -18,5 +18,5 @@ Codebase for robotics practical (MScTI_ROBP) in summer term 2020, Heidelberg Uni
 * etc.
 
 ## TODO
-* do
+* Milestones aktuell halten
 * etc.
