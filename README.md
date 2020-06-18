@@ -1,5 +1,5 @@
 # robotics_practical
-Codebase
+Codebase for robotics practical (MScTI_ROBP) in summer term 2020, Heidelberg University
 
 ## Daten:
 * Bewerbungsfrist: 26.06.2020
