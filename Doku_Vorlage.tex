@@ -1,0 +1,115 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{color}
+\definecolor{gray}{rgb}{0.75,0.75,0.75}
+\definecolor{neonr}{rgb}{1,0.6,0.6}
+\definecolor{neong}{rgb}{0.6,1,0.6}
+\definecolor{neony}{rgb}{1,1,0.6}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\definecolor{code_bg}{rgb}{0.95, .95, .96}
+
+\usepackage{listings}
+\lstset{%frame=tb,
+	language=VHDL,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3,
+	%frame=single,
+	numbers = left,
+	backgroundcolor=\color{code_bg},
+	captionpos=b
+}
+
+
+\usepackage[T1]{fontenc}
+% article/scrartcl 
+%------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[english, ngerman]{babel}
+%\usepackage{german}
+\usepackage[onehalfspacing]{setspace}
+
+
+
+\usepackage[official]{eurosym}
+
+\usepackage{pdflscape}
+\usepackage{pdfpages}
+\usepackage{lscape}
+\usepackage{float}
+\graphicspath{{Bilder/}}
+
+%Eingene Farbdefinitionen
+
+
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks = true,
+	linkcolor = {black},
+	urlcolor = {blue},
+	citecolor= {gray}
+}
+
+
+%------------------------------------------------------
+	
+	\usepackage[
+%	showframe,% Seitenlayout anzeigen
+	left=2cm,
+	right=2cm,
+	top = 2.5cm,
+	bottom=2.5cm,
+	%includeheadfoot
+	]{geometry}
+	
+%---------------------------------------------------
+
+%Einheitenmakros
+\newcommand{\unit}[1] {		%Allgemeines Einheitenmakro
+		\text{\sffamily~#1}}
+\newcommand{\nm}{\text{\sffamily~nm}} %Nanometer definition
+\newcommand{\um}{\text{\sffamily~$\mu$m}} %Mikrometer definition
+\newcommand{\mm}{\text{\sffamily~mm}}
+\newcommand{\gradc}{\text{~$^\circ \text{\sffamily C}$}}
+\newcommand{\gradk}{\text{~$^\circ \text{\sffamily K}$}}
+\newcommand{\ohm}{\,\Omega}
+\newcommand{\muf}{\,$\mu\text{\sffamily F}$}
+\newcommand{\muh}{\,$\mu\text{\sffamily H}$}
+\newcommand{\issim}{\,\hat{=}\,}
+
+
+\renewcommand{\arraystretch}{1}
+\renewcommand{\lstlistingname}{Code-Beispiel} 
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{12} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{12}  % for normal
+
+
+%\renewcommand*\oldstylenums[1]{{\firaoldstyle #1}}
+\usepackage[default]{sourcesanspro}
+\usepackage[T1]{fontenc}
+%\renewcommand*\oldstylenums[1]{{\firaoldstyle #1}}
+%\usepackage{fontspec}
+%\setmainfont{Segoe UI Symbol}
+
+\begin{document}
+	
+\section*{Übungsaufgabe 5}
+\subsection*{KEEP- Attribute}
+Manche Signale werden durch den Compiler wegoptimiert, weshalb diese zuerst mit dem keep - Attribut versehen werden müssen. 
+\begin{lstlisting}[caption=Setzen des keep Attributes]
+SIGNAL sig_xy : IN STD_LOGIC;
+ATTRIBUTE keep: BOOLEAN;
+ATTRIBUTE keep OF sig_xy : SIGNAL IS true;
+\end{lstlisting}
+\end{document}
