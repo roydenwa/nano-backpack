@@ -1,193 +1,117 @@
-%---------------------------Dokumentkenndaten ANFANG-------------------------%
-
-\documentclass[12pt,a4paper,oneside,ngerman,draft=off,headings=small, fleqn]{scrreprt}
-\author{Bart, Prigann, Wagner}
-\title{Robotics practical report}
-\date{\today}
-
-%---------------------------Dokumentkenndaten ENDE-------------------------%
-
-%---------------------------Paketnutzungen ANFANG-------------------------%
-
-\usepackage[english, ngerman]{babel}
-\usepackage[table]{xcolor}%Farbfüllung Tabelle
-\usepackage{graphicx}
-\usepackage{csquotes}
-\usepackage{pdfpages}
-\usepackage{setspace}
-\usepackage{siunitx}
-\sisetup{per-mode=fraction,decimalsymbol=comma}
-\usepackage{scrhack}
-\usepackage{pifont}
-\usepackage{scrlayer-scrpage}
-\usepackage[left=25mm, right=25mm, top=25mm, bottom=25mm, head=22pt]{geometry}%Seiteneinrichtung, 25mm Rand allseits, spezifisch für Seite mit renewcommand
-\usepackage{fontspec}
-\usepackage{lipsum}
-\usepackage{float} %Für Gleitobjekte, damit direkt in Text
-\usepackage[labelfont={bf}]{caption} %Caption-Schriftstil Deklaration
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[
+top=2cm,
+bottom=2cm,
+left=3cm,
+right=2cm,
+headheight=17pt, % as per the warning by fancyhdr
+includehead,includefoot,
+heightrounded, % to avoid spurious underfull messages
+]{geometry} 
+\geometry{a4paper}
+\usepackage[english]{babel}
 \usepackage{listings}
-\usepackage{xcolor}
-\usepackage{multicol}
-\usepackage{multirow}
-\usepackage{tikz}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{subfig}
-\usetikzlibrary{calc,arrows.meta,positioning}
-\usepackage[all]{nowidow}
-\clubpenalty = 10000
-\widowpenalty = 10000
-\displaywidowpenalty = 10000
-\tikzset{
-	rect/.style={draw, rectangle, minimum width=2.0cm},
-	circ/.style={draw, circle},
-	every label/.style={draw=none,font=\scriptsize},
-}
+\usepackage{fancyhdr}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage[table]{xcolor}
+\usepackage{diagbox}
+\usepackage{lipsum}
+\usepackage{lineno}
 
-\def\circledarrow#1#2#3{ % #1 Style, #2 Center, #3 Radius
-	\draw[#1] (#2) +(80:#3) arc(80:-260:#3);
-}
-\lstdefinestyle{mystyle}{ 
-	commentstyle=\color{mGreen},
-	keywordstyle=\color{darkpowderblue},
-	keywordstyle=[2]\color{darkpink},
-	keywordstyle=[3]\color{darkscarlet},
-	keywordstyle=[4]\color{indigo(dye)},
-	numberstyle=\tiny\color{lightgray},
-	stringstyle=\color{red},
-	basicstyle=\footnotesize,
-	breakatwhitespace=false,         
-	breaklines=true,                 
-	%captionpos=b,                    
-	keepspaces=true,                 
-	numbers=left,                    
-	numbersep=5pt,
-	numberstyle=\tiny,                  
-	showspaces=false,                
-	showstringspaces=false,
-	showtabs=false,                  
-	tabsize=2,
-	xleftmargin= 25pt,
-}
-\lstset{escapechar=@,style=mystyle}
-\PassOptionsToPackage{hyphens}{url}\usepackage[pdfborderstyle={/S/U/W 1}]{hyperref}
-\usepackage[noabbrev]{cleveref}
-\setlength{\emergencystretch}{45pt}
-\newcommand{\cmark}{\ding{51}}% Haken
-\newcommand{\xmark}{\ding{53}}%	x
+% Assembler
+\lstdefinelanguage
+{Assembler} % based on the "x86masm" dialect
+% with these extra keywords:
+{morekeywords={call, mov}} % etc.
 
-%---------------------------Paketnutzungen ENDE-------------------------%
+% Lecture Name, exercise number, group number/members
+\newcommand{\lecture}{Robotics Practical}
+\newcommand{\nao}{NAO} % capital letters as official usage
+\newcommand{\project}{Walking \nao}
+%\newcommand{\groupnumber}{}
+\newcommand{\groupmembersshort}{Barth, Prigann, Wagner}
+\newcommand{\groupmemberslist}{Barth, Alexander\\Prigann, Sven\\Wagner, Royden}
+\newcommand{\semester}{Summer term 2020}
+\newcommand{\supervisor}{Wittlinger, Peter}
 
-%---------------------------LAYOUT Fußzeilen ANFANG-------------------------%
-
-\pagestyle{scrheadings}
-\renewcommand{\footfont}{\setmainfont{Arial}\normalfont} %Text in Fußzeile in Arial und 12pt
-\setlength{\footheight}{21.75pt}
-\setkomafont{pagenumber}{\normalfont} %Seitenzahl in Kopfzeile in Arial und 12pt
-
-%---------------------------LAYOUT Fußzeilen ENDE-------------------------%
-
-%---------------------------LAYOUT Überschriften ANFANG-------------------------%
-
-\setcounter{secnumdepth}{3} %Überschriften bis subsection werden nummeriert
-
-%Ab hier: Definition, dass alle Abschnittsüberschriften in Arial und den jeweiligen Abschnittseinstellungen formatiert sind
-
-\setkomafont{disposition}{\normalfont \bfseries}
-
-%---------------------------LAYOUT Überschriften ENDE-------------------------%
-
-%---------------------------LAYOUT Fließtext ANFANG-------------------------%
-
-\setmainfont{Arial} %Arial als Hauptschriftart (mainfont)
-\renewcommand{\baselinestretch}{1.5} %1.5pt Zeilenabstand
-\setlength{\parindent}{0pt} %kein Einzug nach Absatz
-\setlength{\parskip}{10pt} %Zeilenabstand nach Absatz 10pt
-\setkomafont{caption}{\fontsize{9pt}{\baselineskip} \bfseries} %Bild-/Tabellenunterschriften: fett, 9pt
-
-%---------------------------LAYOUT Fließtext ENDE-------------------------%
-
+\fancyhf{}
+%\fancyhead[L]{\groupnumber}
+\fancyhead[C]{\textsc{\groupmembersshort}}
+\fancyfoot[L]{\lecture: \project}
+\fancyfoot[R] {\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\pagestyle{fancy}
 
 \begin{document}
-	
-	%---------------------------TITELBLATT ANFANG-------------------------%
-	\iffalse
 	\begin{titlepage}
-		\includepdf{include/title}
-	\end{titlepage}
-	\fi
-	%---------------------------TITELBLATT ENDE-------------------------%
-	
-	%---------------------------EINSTELLUNG KopfFußzeile ANFANG-------------------------%
-	
-	\setmainfont{Arial} %Arial als Schriftart
-	\clearscrheadfoot
-	\setkomafont{pageheadfoot}{\normalfont}
-	\setlength{\headheight}{10mm}
-	\ohead{\pagemark\normalfont}
-	\ihead{Universität Heidelberg}
-	
-	\cfoot{MScTI\_ROBP}
-	\ofoot{SS 2020}
-	\ifoot{Barth, Prigann, Wagner}
-	
-	%---------------------------EINSTELLUNG KopfFußzeile ENDE-------------------------%
-	
-	%---------------------------HAUPTTEIL ANFANG-------------------------%
-		
-	\chapter{Ebene}
-	\thispagestyle{scrheadings}
-	
-	\lipsum[1]
-	
-	\section{Ebene}
-	
-	\lipsum[1]
-	
-	\subsection{Ebene}
-	
-	\begin{figure}[H]
 		\centering
-		%\includegraphics[width=0.9\linewidth]{include/test}
-		\caption{Beschriftung}
-		\label{fig:test}
-	\end{figure}
+		
+		{\scshape\LARGE Universität Heidelberg\\Institute for Computer Engineering (ZITI) \par}
+		\vspace{1.5cm}
+		{\scshape\Large Master of Science Computer Engineering \par}
+		\vspace{0.5cm}
+		{\scshape\Large \lecture \par}
+		\vspace{1.5cm}
+		{\huge\bfseries \project \par}
+		\vspace{2cm}
+		{\large \groupmemberslist \par}
+		\vspace{2cm}
+		{\itshape supervised by \supervisor \par}
+		\vfill
+		
+		
+		% Bottom of the page
+		{\large \semester \par}
+	\end{titlepage}
 
-	%---------------------------HAUPTTEIL ENDE-------------------------%
-	
-	%---------------------------ZWEITER HAUPTTEIL ANFANG-------------------------%
-	
-	\chapter{Main}
-	\thispagestyle{scrheadings}
-	
-	\cref{tab:test} bla.
-	
-	\begin{minipage}{\linewidth}
-		\begin{table}[H]
-			\centering
-			\captionabove{Beschriftung}
-			\begin{tabular}{c|c}
-				\hline
-				\cellcolor{gray!40}\textbf{Dies} &\cellcolor{gray!40}\textbf{Das}\\
-				\hline\hline
-				Item & \xmark\\\hline
-				Item & \cmark\\\hline
-			\end{tabular}
-			\label{tab:test}
-		\end{table}
-	\end{minipage}
+\noindent \textbf{Abstract}
 
-	\lipsum[1]
+@todo: complete
+
+This report describes the walking \nao{} project of the \lecture{} lecture.
+This project is done by \groupmembersshort, which are all students in the master program computer engineering.
+The main target is to
+
+\tableofcontents
+\newpage
+
+\section{Project}
+
+@todo: explain project
+
+\section{Milestones}
+
+@todo: list planned milestones
+
+\section{Progress}
+
+@todo: overview of lab appointments
+
+	\begin{table}[H]
+	\centering
 	
-	%---------------------------ZWEITER HAUPTTEIL ENDE-------------------------%
-	
-	%---------------------------Fazit & Ausblick ANFANG-------------------------%
-	
-	\chapter{Ausblick}\label{cha:ausb}
-	\thispagestyle{scrheadings}
-	
-	Ausblick für die Verwendung des Projekts in zukünftigen Projekten/Lehre
-	
-	%---------------------------Fazit & Ausblick ENDE-------------------------%
+	\caption{Lab appointments}
+	\begin{tabular}{l|l}
+		\hline \cellcolor{gray!40}\textbf{Date} & 
+		\cellcolor{gray!40}\textbf{Results} \\
+		\hline\hline
+		30.06.2020 & Safety instruction \\\hline
+		2 & -  \\\hline
+	\end{tabular}
+	\label{tab:test}
+\end{table}
+
+\section{Commissioning}
+
+@todo: instructions for commissioning
+
+\section{Conclusion and outlook}
+
+@todo: future usage in lecturing and the robotic lab
 
 \end{document}
