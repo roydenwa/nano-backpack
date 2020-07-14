@@ -22,10 +22,10 @@ Codebase for robotics practical (MScTI_ROBP) in summer term 2020, Heidelberg Uni
 * etc.
 
 ## Milestones:
-- [] test development env for ROS (in docker?)
-- [] try nao/ naoqi with ROS: http://wiki.ros.org/nao
-- [] use DenseDepth as basemodel for depth estimation: https://arxiv.org/pdf/1812.11941v2.pdf
-- [] try to change basemodel of DensDepth to MobileNet V1/V2 to increase speed
-- [] create nodes for CV in ROS (Python - opencv, tf/torch)
-- [] try to convert depth images to point clouds via: http://wiki.ros.org/depth_image_proc
-- [] implement functions in ROS nodes to check if naviagtion to a certain point is possible based on point cloud of surroundings
+- [ ] test development env for ROS (in docker?)
+- [ ] try nao/ naoqi with ROS: http://wiki.ros.org/nao
+- [ ] use DenseDepth as basemodel for depth estimation: https://arxiv.org/pdf/1812.11941v2.pdf
+- [ ] try to change basemodel of DensDepth to MobileNet V1/V2 to increase speed
+- [ ] create nodes for CV in ROS (Python - opencv, tf/torch)
+- [ ] try to convert depth images to point clouds via: http://wiki.ros.org/depth_image_proc
+- [ ] implement functions in ROS nodes to check if naviagtion to a certain point is possible based on point cloud of surroundings
