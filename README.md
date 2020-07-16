@@ -1,6 +1,9 @@
 # robotics_practical
 Codebase for robotics practical (MScTI_ROBP) in summer term 2020, Heidelberg University
 
+## ML Colab notebooks:
+* monocular depth estimation: https://colab.research.google.com/drive/1gyQloTjFFWqocp1bS43dUadsRt_RBJK7?usp=sharing
+
 ## Daten:
 * Bewerbungsfrist: 26.06.2020
   * abgeschickt: 10.06.2020
