@@ -3,6 +3,8 @@ import cv2
 import tensorflow as tf
 
 from dataclasses import dataclass, field
+from keras.models import load_model
+import pretrained_model
 
 
 def stream_webcam(cap):
@@ -13,6 +15,13 @@ def stream_webcam(cap):
 
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
+
+
+def tf_inference():
+    ''' tf decorater func for Video class'''
+    if model:
+        pass
+    pass
 
 
 @dataclass
@@ -37,9 +46,11 @@ class Video:
 if __name__ == "__main__":
     video = Video(cv2.CAP_DSHOW)
 
+    '''
     while(True):
         frame = video.get_frame()
         cv2.imshow("frame", frame)
 
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
+    '''
