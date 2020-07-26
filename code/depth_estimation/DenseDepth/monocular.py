@@ -19,15 +19,18 @@ def stream_webcam(cap):
 
 
 def tf_inference(func, max_depth=1000, min_depth=10):
-    ''' tf decorater func for Video class'''
+    ''' tf decorater func for Video class '''
     def func_wrapper(*args, **kwargs):
         frame = func(*args, **kwargs)
-        frame = frame[np.newaxis, ...]
 
-        if model:
+        if "model" in globals():
+            frame = frame[np.newaxis, ...]
             predictions = model.predict(frame, batch_size=2)
+            out_frame = np.clip(predictions/max_depth, min_depth, max_depth) / max_dept
+        else:
+            out_frame = frame
 
-        return np.clip(predictions/max_depth, min_depth, max_depth) / max_depth
+        return out_frame
 
     return func_wrapper
 
@@ -59,20 +62,19 @@ class Video:
 if __name__ == "__main__":
     video = Video(cv2.CAP_DSHOW, 240, 320)
 
-    # tf model init:
+    # tf pretained model init:
     custom_objects = {'BilinearUpSampling2D': pretrained_model.BilinearUpSampling2D,
                       'depth_loss_function': None}
-    model = load_model("pretrained_model/nyu.h5", custom_objects=custom_objects,
-                        compile=False)
+    #model = load_model("pretrained_model/nyu.h5", custom_objects=custom_objects,
+    #                    compile=False)
 
     while(True):
         frame = video.get_frame()
-        print(frame.shape)
+        #print(frame.shape)
 
         # TODO: convert "raw" colormap to img
-        '''
+
         cv2.imshow("frame", frame)
 
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
-    '''
