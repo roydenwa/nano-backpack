@@ -2,6 +2,7 @@ import PIL
 import cv2
 import tensorflow as tf
 import numpy as np
+import matplotlib.pyplot as plt
 
 from dataclasses import dataclass, field
 from keras.models import load_model
@@ -24,13 +25,15 @@ def tf_inference(func, max_depth=1000, min_depth=10):
         frame = func(*args, **kwargs)
 
         if "model" in globals():
-            frame = frame[np.newaxis, ...]
-            predictions = model.predict(frame, batch_size=2)
-            out_frame = np.clip(predictions/max_depth, min_depth, max_depth) / max_dept
-        else:
-            out_frame = frame
+            frame_tf = frame[np.newaxis, ...]
+            predictions = model.predict(frame_tf, batch_size=2)
 
-        return out_frame
+            # needed? returns very small vals
+            depth_frame = np.clip(predictions/max_depth, min_depth, max_depth) / max_depth
+
+            return frame, predictions
+        else:
+            return frame
 
     return func_wrapper
 
@@ -65,16 +68,26 @@ if __name__ == "__main__":
     # tf pretained model init:
     custom_objects = {'BilinearUpSampling2D': pretrained_model.BilinearUpSampling2D,
                       'depth_loss_function': None}
-    #model = load_model("pretrained_model/nyu.h5", custom_objects=custom_objects,
-    #                    compile=False)
+    model = load_model("pretrained_model/nyu.h5", custom_objects=custom_objects,
+                        compile=False)
 
     while(True):
         frame = video.get_frame()
-        #print(frame.shape)
 
-        # TODO: convert "raw" colormap to img
+        if "model" in globals():
+            # TODO: convert "raw" colormap to img
+            depth_frame_raw = frame[1][0, :, :, :]
+            depth_frame_raw *= 255.0 / depth_frame_raw.max()
+            depth_frame_raw = np.array(depth_frame_raw, dtype=np.uint8)
 
-        cv2.imshow("frame", frame)
+            # colorize:
+            depth_frame_color = cv2.applyColorMap(depth_frame_raw,
+                                                  cv2.COLORMAP_PLASMA)
+
+            #cv2.imshow("frame", frame[0])
+            cv2.imshow("depth frame", depth_frame_color)
+        else:
+            cv2.imshow("frame", frame)
 
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break

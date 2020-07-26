@@ -1,4 +1,6 @@
 # src: https://github.com/priya-dwivedi/Deep-Learning/blob/master/depth_estimation/
+import cv2
+import numpy as np
 import matplotlib.pyplot as plt
 
 
