@@ -25,7 +25,10 @@ def tf_inference(func, max_depth=1000, min_depth=10):
         frame = func(*args, **kwargs)
 
         if "model" in globals():
+            frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            frame = np.clip(np.asarray(frame, dtype=float) / 255, 0, 1)
             frame_tf = frame[np.newaxis, ...]
+
             predictions = model.predict(frame_tf, batch_size=2)
 
             # needed? returns very small vals
