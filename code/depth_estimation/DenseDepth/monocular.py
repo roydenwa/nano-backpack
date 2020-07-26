@@ -46,14 +46,14 @@ class Video:
     src = 0 -> webcam
     '''
     src: int
-    x_size: float
-    y_size: float
+    width: float
+    height: float
     cap: object = field(init=False)
 
     def __post_init__(self):
         self.cap = cv2.VideoCapture(self.src)
-        self.cap.set(3, self.x_size)
-        self.cap.set(4, self.y_size)
+        self.cap.set(3, self.width)
+        self.cap.set(4, self.height)
 
     @tf_inference
     def get_frame(self):
@@ -63,7 +63,7 @@ class Video:
 
 
 if __name__ == "__main__":
-    video = Video(cv2.CAP_DSHOW, 240, 320)
+    video = Video(cv2.CAP_DSHOW, 352, 288)
 
     # tf pretained model init:
     custom_objects = {'BilinearUpSampling2D': pretrained_model.BilinearUpSampling2D,
@@ -83,6 +83,10 @@ if __name__ == "__main__":
             # colorize:
             depth_frame_color = cv2.applyColorMap(depth_frame_raw,
                                                   cv2.COLORMAP_PLASMA)
+
+            # upscale:
+            depth_frame_color = cv2.resize(depth_frame_color, (320, 240),
+                                           interpolation=cv2.INTER_AREA)
 
             #cv2.imshow("frame", frame[0])
             cv2.imshow("depth frame", depth_frame_color)
