@@ -20,6 +20,18 @@ Codebase for robotics practical (MScTI_ROBP) in summer term 2020, Heidelberg Uni
 * peter.wittlinger@ziti.uni-heidelberg.de
 * etc.
 
+## How to build and run ROS Kinetic within a Docker Image and access the GUI via VNC
+navigate into ROS folder
+build:
+```bash
+docker build -t "ros-vnc-py3.7" .
+```
+run:
+```bash
+docker run -it --rm -p 6080:80 "ros-vnc-py3.7"
+```
+browse localhost:6080
+
 ## TODO
 * Milestones aktuell halten
 * etc.
