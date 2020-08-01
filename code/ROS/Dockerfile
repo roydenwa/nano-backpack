@@ -27,12 +27,6 @@ RUN apt-get update \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
 
-# install Python 3.7 and make it the default version
-RUN add-apt-repository ppa:deadsnakes/ppa && apt-get update && \
-    apt-get install -y curl python3.7 python3.7-dev python3.7-distutils && \
-    update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1 && \
-    update-alternatives --set python /usr/bin/python3.7
-
 # install ros (source: https://github.com/osrf/docker_images/blob/5399f380af0a7735405a4b6a07c6c40b867563bd/ros/kinetic/ubuntu/xenial/ros-core/Dockerfile)
 # install packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -85,6 +79,10 @@ RUN chmod +x /bin/tini
 
 ADD image /
 RUN pip install setuptools wheel && pip install -r /usr/lib/web/requirements.txt
+
+# install Python 3.7
+RUN add-apt-repository ppa:deadsnakes/ppa && apt-get update && \
+    apt-get install -y curl python3.7 python3.7-dev python3.7-distutils
 
 RUN cp /usr/share/applications/terminator.desktop /root/Desktop
 RUN echo "source /opt/ros/kinetic/setup.bash" >> /root/.bashrc
