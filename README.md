@@ -29,6 +29,9 @@ docker build -t "ros-vnc-py3.7" .
 run:
 ```bash
 docker run -it --rm -p 6080:80 "ros-vnc-py3.7"
+# -it == interactive mode
+# --rm == remove container after exit
+# -p ... == port forwarding
 ```
 browse: http://localhost:6080 or use VNC client
 
@@ -37,9 +40,9 @@ browse: http://localhost:6080 or use VNC client
 * etc.
 
 ## Milestones:
-- [ ] test development env for ROS (in docker?)
+- [X] test development env for ROS (in docker?)
 - [ ] try nao/ naoqi with ROS: http://wiki.ros.org/nao
-- [ ] use DenseDepth as basemodel for depth estimation: https://arxiv.org/pdf/1812.11941v2.pdf
+- [X] use DenseDepth as basemodel for depth estimation: https://arxiv.org/pdf/1812.11941v2.pdf
 - [ ] try to change basemodel of DensDepth to MobileNet V1/V2 to increase speed
 - [ ] write test-funcs to showcase depth estimation model in realtime via your webcam
 - [ ] create nodes for CV in ROS (Python - opencv, tf/torch)
