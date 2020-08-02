@@ -60,8 +60,6 @@ ENV ROS_DISTRO kinetic
 RUN apt-get update && apt-get install -y \
 #    ros-kinetic-ros-core=1.3.1-0* \
     ros-kinetic-desktop-full \
-    #              A
-    #              +--- full desktop \
     && rm -rf /var/lib/apt/lists/*
 
 # user tools
@@ -83,6 +81,18 @@ RUN pip install setuptools wheel && pip install -r /usr/lib/web/requirements.txt
 # install Python 3.7
 RUN add-apt-repository ppa:deadsnakes/ppa && apt-get update && \
     apt-get install -y curl python3.7 python3.7-dev python3.7-distutils
+
+# install NAOqi
+RUN apt-get install -y ros-.*-nao-robot && \
+    mkdir naoqi && apt-get install -y wget && \
+    wget "https://community-static.aldebaran.com/resources/2.8.5/naoqi-sdk-2.8.5.10-linux64.tar.gz" -P ./naoqi && \
+    wget "https://community-static.aldebaran.com/resources/2.8.6/pynaoqi-python2.7-2.8.6.23-linux64-20191127_152327.tar.gz" -P ./naoqi && \
+    tar xzf naoqi/naoqi-sdk-2.8.5.10-linux64.tar.gz -C naoqi && \
+    tar xzf naoqi/pynaoqi-python2.7-2.8.6.23-linux64-20191127_152327.tar.gz -C naoqi && \
+    rm naoqi/naoqi-sdk-2.8.5.10-linux64.tar.gz && rm naoqi/pynaoqi-python2.7-2.8.6.23-linux64-20191127_152327.tar.gz && \
+    export PYTHONPATH=~/naoqi/pynaoqi-python2.7-2.8.6.23-linux64-20191127_152327:$PYTHONPATH && \
+    echo 'export PYTHONPATH=${PYTHONPATH}:naoqi/pynaoqi-python2.7-2.8.6.23-linux64-20191127_152327/lib/python2.7/site-packages' >> ~/.bashrc && \
+    echo 'export QI_SDK_PREFIX=naoqi/pynaoqi-python2.7-2.8.6.23-linux64-20191127_152327' >> ~/.bashrc
 
 RUN cp /usr/share/applications/terminator.desktop /root/Desktop
 RUN echo "source /opt/ros/kinetic/setup.bash" >> /root/.bashrc
