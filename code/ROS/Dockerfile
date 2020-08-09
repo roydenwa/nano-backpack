@@ -90,9 +90,6 @@ RUN mkdir ~/naoqi && apt-get install -y wget && \
     tar xzf ~/naoqi/pynaoqi-python2.7-2.8.6.23-linux64-20191127_152327.tar.gz -C ~/naoqi && \
     rm ~/naoqi/naoqi-sdk-2.8.5.10-linux64.tar.gz && rm ~/naoqi/pynaoqi-python2.7-2.8.6.23-linux64-20191127_152327.tar.gz
 
-RUN cp /usr/share/applications/terminator.desktop /root/Desktop
-RUN echo "source /opt/ros/kinetic/setup.bash" >> /root/.bashrc
-
 # add NAOqi paths to .bashrc
 RUN echo "export PYTHONPATH=~/naoqi/pynaoqi-python2.7-2.8.6.23-linux64-20191127_152327:$PYTHONPATH" >> /root/.bashrc && \
     echo "export AL_DIR=~/naoqi/naoqi-sdk-2.8.5.10-linux64" >> /root/.bashrc && \
@@ -113,6 +110,9 @@ RUN apt-get install -y ros-kinetic-nao-bringup ros-kinetic-naoqi-pose \
     ros-kinetic-naoqi-driver ros-kinetic-naoqi-driver-py \
     ros-kinetic-naoqi-sensors-py ros-kinetic-nao-dcm-bringup \
     ros-kinetic-moveit
+
+RUN cp /usr/share/applications/terminator.desktop /root/Desktop
+RUN echo "source /opt/ros/kinetic/setup.bash" >> /root/.bashrc
 
 EXPOSE 80
 WORKDIR /root
