@@ -83,19 +83,36 @@ RUN add-apt-repository ppa:deadsnakes/ppa && apt-get update && \
     apt-get install -y curl python3.7 python3.7-dev python3.7-distutils
 
 # install NAOqi
-RUN apt-get install -y ros-.*-nao-robot && \
-    mkdir naoqi && apt-get install -y wget && \
-    wget "https://community-static.aldebaran.com/resources/2.8.5/naoqi-sdk-2.8.5.10-linux64.tar.gz" -P ./naoqi && \
-    wget "https://community-static.aldebaran.com/resources/2.8.6/pynaoqi-python2.7-2.8.6.23-linux64-20191127_152327.tar.gz" -P ./naoqi && \
-    tar xzf naoqi/naoqi-sdk-2.8.5.10-linux64.tar.gz -C naoqi && \
-    tar xzf naoqi/pynaoqi-python2.7-2.8.6.23-linux64-20191127_152327.tar.gz -C naoqi && \
-    rm naoqi/naoqi-sdk-2.8.5.10-linux64.tar.gz && rm naoqi/pynaoqi-python2.7-2.8.6.23-linux64-20191127_152327.tar.gz && \
-    export PYTHONPATH=~/naoqi/pynaoqi-python2.7-2.8.6.23-linux64-20191127_152327:$PYTHONPATH && \
-    echo 'export PYTHONPATH=${PYTHONPATH}:naoqi/pynaoqi-python2.7-2.8.6.23-linux64-20191127_152327/lib/python2.7/site-packages' >> ~/.bashrc && \
-    echo 'export QI_SDK_PREFIX=naoqi/pynaoqi-python2.7-2.8.6.23-linux64-20191127_152327' >> ~/.bashrc
+RUN mkdir ~/naoqi && apt-get install -y wget && \
+    wget "https://community-static.aldebaran.com/resources/2.8.5/naoqi-sdk-2.8.5.10-linux64.tar.gz" -P ~/naoqi && \
+    wget "https://community-static.aldebaran.com/resources/2.8.6/pynaoqi-python2.7-2.8.6.23-linux64-20191127_152327.tar.gz" -P ~/naoqi && \
+    tar xzf ~/naoqi/naoqi-sdk-2.8.5.10-linux64.tar.gz -C ~/naoqi && \
+    tar xzf ~/naoqi/pynaoqi-python2.7-2.8.6.23-linux64-20191127_152327.tar.gz -C ~/naoqi && \
+    rm ~/naoqi/naoqi-sdk-2.8.5.10-linux64.tar.gz && rm ~/naoqi/pynaoqi-python2.7-2.8.6.23-linux64-20191127_152327.tar.gz
 
 RUN cp /usr/share/applications/terminator.desktop /root/Desktop
 RUN echo "source /opt/ros/kinetic/setup.bash" >> /root/.bashrc
+
+# add NAOqi paths to .bashrc
+RUN echo "export PYTHONPATH=~/naoqi/pynaoqi-python2.7-2.8.6.23-linux64-20191127_152327:$PYTHONPATH" >> /root/.bashrc && \
+    echo "export AL_DIR=~/naoqi/naoqi-sdk-2.8.5.10-linux64" >> /root/.bashrc && \
+    echo "export AL_DIR_SIM=~/naoqi/naoqi-sdk-2.8.5.10-linux64" >> /root/.bashrc && \
+    echo "export PYTHONPATH=~/naoqi/pynaoqi-python2.7-2.8.6.23-linux64-20191127_152327/lib/python2.7/site-packages:$PYTHONPATH" >> /root/.bashrc && \
+    echo "export QI_SDK_PREFIX=~/naoqi/pynaoqi-python2.7-2.8.6.23-linux64-20191127_152327" >> /root/.bashrc
+
+# install needed pkgs and NAO pkg for ROS kinetic
+RUN apt-get install -y ros-kinetic-driver-base ros-kinetic-move-base-msgs \
+    ros-kinetic-octomap ros-kinetic-octomap-msgs ros-kinetic-humanoid-msgs \
+    ros-kinetic-humanoid-nav-msgs ros-kinetic-camera-info-manager \
+    #os-kinetic-camera-info-manager-py \
+    ros-kinetic-nao-robot
+
+# install pkgs to control NAO
+RUN apt-get install -y ros-kinetic-nao-bringup ros-kinetic-naoqi-pose \
+    ros-kinetic-nao-interaction ros-kinetic-nao-moveit-config \
+    ros-kinetic-naoqi-driver ros-kinetic-naoqi-driver-py \
+    ros-kinetic-naoqi-sensors-py ros-kinetic-nao-dcm-bringup \
+    ros-kinetic-moveit
 
 EXPOSE 80
 WORKDIR /root
