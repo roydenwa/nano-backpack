@@ -41,7 +41,7 @@ browse: http://localhost:6080 or use VNC client
 
 ## Milestones:
 - [X] test development env for ROS (in docker?)
-- [ ] try nao/ naoqi with ROS: http://wiki.ros.org/nao
+- [X] try nao/ naoqi with ROS: http://wiki.ros.org/nao
 - [X] use DenseDepth as basemodel for depth estimation: https://arxiv.org/pdf/1812.11941v2.pdf
 - [ ] try to change basemodel of DensDepth to MobileNet V1/V2 to increase speed
 - [ ] write test-funcs to showcase depth estimation model in realtime via your webcam
