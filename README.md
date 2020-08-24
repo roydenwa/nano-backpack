@@ -48,7 +48,7 @@ browse: http://localhost:6080 or use VNC client
 - [X] write test-funcs to showcase depth estimation model in realtime via your webcam
 
 # Remote control NAO:
-- [ ] contruct NAO-nano-backback
+- [ ] construct NAO-nano-backpack
 - [ ] write webapp to control NAO
 - [ ] serve webapp with flask on nano
 

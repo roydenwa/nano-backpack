@@ -33,8 +33,8 @@ heightrounded, % to avoid spurious underfull messages
 \newcommand{\nao}{NAO} % capital letters as official usage
 \newcommand{\project}{Walking \nao}
 %\newcommand{\groupnumber}{}
-\newcommand{\groupmembersshort}{Barth, Prigann, Wagner}
-\newcommand{\groupmemberslist}{Barth, Alexander\\Prigann, Sven\\Wagner, Royden}
+\newcommand{\groupmembersshort}{Barth, Wagner}
+\newcommand{\groupmemberslist}{Barth, Alexander\\Wagner, Royden}
 \newcommand{\semester}{Summer term 2020}
 \newcommand{\supervisor}{Wittlinger, Peter}
 
@@ -80,31 +80,37 @@ The main target is to
 \tableofcontents
 \newpage
 
-\section{Project}
+\section{Testing and prep}
 
-@todo: explain project
+@todo: ...\\
 
-\section{Milestones}
+test development env for ROS (in docker?)\\
+try nao/ naoqi with ROS: http://wiki.ros.org/nao\\
+use DenseDepth as basemodel for depth estimation: https://arxiv.org/pdf/1812.11941v2.pdf\\
+write test-funcs to showcase depth estimation model in realtime via your webcam
 
-@todo: list planned milestones
+\section{Remote control}
 
-\section{Progress}
+@todo: ...\\
 
-@todo: overview of lab appointments
+construct NAO-nano-backpack\\
+write webapp to control NAO\\
+serve webapp with flask on nano\\
 
-	\begin{table}[H]
-	\centering
-	
-	\caption{Lab appointments}
-	\begin{tabular}{l|l}
-		\hline \cellcolor{gray!40}\textbf{Date} & 
-		\cellcolor{gray!40}\textbf{Results} \\
-		\hline\hline
-		30.06.2020 & Safety instruction \\\hline
-		2 & -  \\\hline
-	\end{tabular}
-	\label{tab:test}
-\end{table}
+idea: use UI5
+
+\section{Depth estimation}
+
+@todo: ...\\
+
+use opencv to detect if dark blue colored objects are in the desired direction and decline movement if so\\
+
+get desired direction and draw on depth image\\
+use color picker to check if movement in chosen direction is possible (dark blue == not possible)\\
+try to implement a color search algo in opencv similar to SSD (single shot detector)\\
+
+implement functions to check if navigation in certain direction is possible based on point cloud of surroundings\\
+optional: try to change basemodel of DensDepth to MobileNet V1/V2 to increase speed
 
 \section{Commissioning}
 
