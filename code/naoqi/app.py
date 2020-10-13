@@ -1,0 +1,4 @@
+import naoqi
+
+
+print "success"
