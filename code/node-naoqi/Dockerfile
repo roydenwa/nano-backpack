@@ -1,4 +1,4 @@
-FROM nikolaik/python-nodejs:python3.7-nodejs12
+FROM node:12.19.0-buster
 
 # install node-naoqi & update dependencies
 RUN npm install naoqi --save && \
