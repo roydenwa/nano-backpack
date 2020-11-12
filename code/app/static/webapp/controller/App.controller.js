@@ -18,6 +18,16 @@ sap.ui.define([
 
     onInit: function() {
       this.getView().setModel(models.createModel());
+
+      // TODO: init qimessaging
+    },
+
+    move: function() {
+      // TODO:
+    },
+
+    speak: function() {
+      // TODO:
     },
 
     onChange: function(oEvent) {
