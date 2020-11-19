@@ -22,8 +22,38 @@ sap.ui.define([
       // TODO: init qimessaging
     },
 
+    walkUp: function() {
+      // TODO:
+      // call move
+    },
+
+    walkLeft: function() {
+      // TODO:
+      // call move
+    },
+
+    walkRight: function() {
+      // TODO:
+      // call move
+    },
+
+    walkDown: function() {
+      // TODO:
+      // call move
+    },
+
     move: function() {
       // TODO:
+    },
+
+    sayHello: function() {
+      // TODO:
+      // call speak
+    },
+
+    sayIAm: function() {
+      // TODO:
+      // call speak
     },
 
     speak: function() {
