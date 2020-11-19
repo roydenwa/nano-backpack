@@ -21,25 +21,49 @@
           <l:BlockLayoutCell>
             <VBox alignItems="Center" width="100%" height="100%">
               <HBox>
-                <Button icon="sap-icon://arrow-top"/>
+                <Button icon="sap-icon://arrow-top" type="Emphasized"/>
               </HBox>
               <HBox alignItems="Center">
-                <Button icon="sap-icon://arrow-left"/>
+                <Button icon="sap-icon://arrow-left" type="Emphasized"/>
                 <Button enabled="false"/>
-                <Button icon="sap-icon://arrow-right"/>
+                <Button icon="sap-icon://arrow-right" type="Emphasized"/>
               </HBox>
               <HBox>
-                <Button icon="sap-icon://arrow-bottom"/>
+                <Button icon="sap-icon://arrow-bottom" type="Emphasized"/>
               </HBox>
             </VBox>
           </l:BlockLayoutCell>
           <l:BlockLayoutCell>
+          <VBox alignItems="Center" width="100%" height="100%">
+              <HBox>
+                <Button text="Hello, World!" type="Emphasized"/>
+              </HBox>
+              <HBox alignItems="Center">
+                <!--Button text="Let's go!" type="Emphasized"/-->
+                <Button icon="sap-icon://post" enabled="false"/>
+                <!--Button text="I am NAO!" type="Emphasized"/-->
+              </HBox>
+              <HBox>
+                <Button text="I am NAO" type="Emphasized"/>
+              </HBox>
+            </VBox>
           </l:BlockLayoutCell>
         </l:BlockLayoutRow>
 
         <l:BlockLayoutRow>
           <l:BlockLayoutCell>
-          <Input/>
+          <Panel headerText="Where is NAO?" expandable="true">
+							<l:HorizontalLayout class="sapUiSmallMargin">
+                <Input placeholder="Enter NAO's IP"/>
+							</l:HorizontalLayout>
+						</Panel>
+          </l:BlockLayoutCell>
+          <l:BlockLayoutCell>
+          <Panel headerText="Let's talk!" expandable="true">
+							<l:HorizontalLayout class="sapUiSmallMargin">
+                <Input placeholder="Enter NAO's thoughts"/>
+							</l:HorizontalLayout>
+						</Panel>
           </l:BlockLayoutCell>
         </l:BlockLayoutRow>
 
@@ -47,6 +71,7 @@
           <l:BlockLayoutCell>
             <Button
               text="Back to start"
+              type="Emphasized"
               press=".goBack"/>
           </l:BlockLayoutCell>
         </l:BlockLayoutRow>
