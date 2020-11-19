@@ -142,10 +142,10 @@
         <l:BlockLayoutRow>
           <l:BlockLayoutCell>
             <Panel 
-              headerText="Let's talk!" 
+              headerText="My POV" 
               expandable="true">
 							<l:HorizontalLayout class="sapUiSmallMargin">
-                <Input placeholder="Enter NAO's thoughts"/>
+                <Input placeholder="Here should be a video"/>
 							</l:HorizontalLayout>
 						</Panel>
            </l:BlockLayoutCell>
