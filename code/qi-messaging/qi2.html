@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<script src="libqi-js/libs/qi/2/qi.js"></script>
+<script type="text/javascript">
+
+    var robot_address = '169.254.188.2'
+
+    QiSession(function (session) {
+      //console.log("connected!");
+      // you can now use your QiSession
+      session.service("ALTextToSpeech").then(function (tts) {
+      // tts is a proxy to the ALTextToSpeech service
+      tts.say("hello alex");
+      }, function (error) {
+        console.log("An error occurred:", error);
+      });
+
+      session.service("ALMotion").then(function (motion) {
+        // (x, y, theta) [m, m, rad] theta pos -> left, theta neg -> right 
+        motion.moveTo(0.1, 0, -1.5);
+      }, function (error) {
+        console.log("An error occurred:", error);
+      });
+      
+      session.service("ALVideoDevice").then(function (camera) {
+        var activeCameras = camera.getActiveCameras();
+        console.log(activeCameras);
+      }, function (error) {
+        console.log("An error occurred:", error);
+      }).then(function (camera) {
+        // subscribeCamera ( const std::string& Name , const int& CameraIndex , const int& Resolution , const int& ColorSpace , const int& Fps )
+        camera.subscribeCamera("camera1", 1, 1, 11, 5);
+      }, function (error) {
+        console.log("An error occurred:", error);
+      }).then(function (camera) {
+        // getImageRemote ( const std::string& Handle ) Handle == name of subscriber
+        var img = camera.getImageRemote("camera1");
+        console.log(img);
+      }, function (error) {
+        console.log("An error occurred:", error);
+      });
+      
+      console.log("connected!");
+    }, function () {
+      console.log("disconnected");
+    },
+      robot_address);
+</script>
+</body>
+</html>
