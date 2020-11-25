@@ -59,3 +59,6 @@ browse: http://localhost:6080 or use VNC client
     - [ ] try to implement a color search algo in opencv similar to SSD (single shot detector)
 - [ ] implement functions to check if navigation in certain direction is possible based on point cloud of surroundings
 - [ ] optional: try to change basemodel of DensDepth to MobileNet V1/V2 to increase speed
+
+# Diagram: 
+- https://colab.research.google.com/drive/17LU7zdjKQaLcvlP8urdSHtBXtgi4b-lk?usp=sharing 
