@@ -18,46 +18,23 @@ sap.ui.define([
 
     onInit: function() {
       this.getView().setModel(models.createModel());
-
-      // TODO: init qimessaging
     },
 
-    walkUp: function() {
-      // TODO:
-      // call move
+    callPrintMsg: function() {
+      console.log(testMsg);
+      printMsg();
     },
 
-    walkLeft: function() {
-      // TODO:
-      // call move
+    callInitQiSession: function(ip) {
+      initQiSession(ip);
     },
 
-    walkRight: function() {
-      // TODO:
-      // call move
+    callSpeak: function(msg) {
+      speak(msg);
     },
 
-    walkDown: function() {
-      // TODO:
-      // call move
-    },
-
-    move: function() {
-      // TODO:
-    },
-
-    sayHello: function() {
-      // TODO:
-      // call speak
-    },
-
-    sayIAm: function() {
-      // TODO:
-      // call speak
-    },
-
-    speak: function() {
-      // TODO:
+    callWalk: function(x, y, theta) {
+      walk(x, y, theta);
     },
 
     onChange: function(oEvent) {

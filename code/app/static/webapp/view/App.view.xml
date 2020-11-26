@@ -99,7 +99,7 @@
                 <Button 
                   text="Hello, World!" 
                   type="Emphasized" 
-                  press=".sayHello"/>
+                  press=".callPrintMsg"/>
               </HBox>
               <HBox alignItems="Center">
                 <!--Button text="Let's go!" type="Emphasized"/-->
