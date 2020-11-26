@@ -124,7 +124,12 @@
               headerText="Where is NAO?" 
               expandable="true">
 							<l:HorizontalLayout class="sapUiSmallMargin">
-                <Input placeholder="Enter NAO's IP"/>
+                <Input 
+                  id="naoip" 
+                  placeholder="Enter NAO's IP"
+                  value="{
+			            	path : '/naoip',
+				            type : 'sap.ui.model.type.String'}"/>
 							</l:HorizontalLayout>
 						</Panel>
           </l:BlockLayoutCell>
@@ -133,7 +138,12 @@
               headerText="Let's talk!" 
               expandable="true">
 							<l:HorizontalLayout class="sapUiSmallMargin">
-                <Input placeholder="Enter NAO's thoughts"/>
+                <Input 
+                  id="naospeak" 
+                  placeholder="Enter NAO's thoughts"
+                  value="{
+			            	path : '/naospeak',
+				            type : 'sap.ui.model.type.String'}"/>
 							</l:HorizontalLayout>
 						</Panel>
           </l:BlockLayoutCell>
