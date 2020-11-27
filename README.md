@@ -1,3 +1,31 @@
+# TODO:
+
+- [ ] Docu
+ - [ ] Layout simplify - Alex frist page - abstract and contents, header
+ - [ ] Related works Backpack - Alex
+ - [ ] Related works Mooncular
+ - [ ] Intructions for Peter - Peter how to - Alex
+  - pw user on Nano
+  - pw wlan nano-bp
+  - ip ssh
+  - standard ip NAO robot
+  - Table compatible Naoqi-SDKs (Offical: Python: no(not suitable for ARM), Javascript: qimessaging yes, qi2: yes, C++: not tested, Third-party: ROS: deprecated,   NodeJs~yorki: yes)
+  - Development Environment Nano:
+   - how to use docker and python on Nano with NAO
+ - [ ] Mechanical design - Royden
+ - [ ] Remote control NAO ~ UI5 - Royden / Alex
+ - [ ] Depthestiation - decorator -> single-frame <-> video - Royden
+ - [ ] Conclusion: - Alex 
+  - [ ] benefit: easy start - dev env - UI for for testing
+  - [ ] outlook: python base for depthestimation, JS base for more NAOqi-services
+- [ ] App
+ - [ ] NAOs view - placeholder img of NAO - Alex
+ - [ ] ui5-datamodel ip, text params - Royden
+ - [ ] Import Error qimessaging - Royden
+ - [ ] update readme, clean repo 
+ - [ ] Docker images
+ 
+
 # robotics_practical
 Codebase for robotics practical (MScTI_ROBP) in summer term 2020, Heidelberg University
 
