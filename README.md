@@ -1,17 +1,17 @@
 # TODO:
 
 - [ ] Docu
- - [ ] Layout simplify - Alex frist page - abstract and contents, header
- - [ ] Related works Backpack - Alex
- - [ ] Related works Mooncular
- - [ ] Intructions for Peter - Peter how to - Alex
-  - pw user on Nano
-  - pw wlan nano-bp
-  - ip ssh
-  - standard ip NAO robot
-  - Table compatible Naoqi-SDKs (Offical: Python: no(not suitable for ARM), Javascript: qimessaging yes, qi2: yes, C++: not tested, Third-party: ROS: deprecated,   NodeJs~yorki: yes)
-  - Development Environment Nano:
-   - how to use docker and python on Nano with NAO
+   - [ ] Layout simplify - Alex frist page - abstract and contents, header
+    - [ ] Related works Backpack - Alex
+    - [ ] Related works Mooncular
+    - [ ] Intructions for Peter - Peter how to - Alex
+        - [ ] pw user on Nano
+        - [ ] pw wlan nano-bp
+        - [ ] ip ssh
+        - [ ] standard ip NAO robot
+        - [ ] Table compatible Naoqi-SDKs (Offical: Python: no(not suitable for ARM), Javascript: qimessaging yes, qi2: yes, C++: not tested, Third-party: ROS: deprecated,   NodeJs~yorki: yes)
+        - [ ] Development Environment Nano:
+        - [ ] how to use docker and python on Nano with NAO
  - [ ] Mechanical design - Royden
  - [ ] Remote control NAO ~ UI5 - Royden / Alex
  - [ ] Depthestiation - decorator -> single-frame <-> video - Royden
