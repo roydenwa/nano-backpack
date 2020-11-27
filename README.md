@@ -3,10 +3,10 @@ Codebase for robotics practical project (MScTI_ROBP) in summer term 2020, Heidel
 
 # TODO:
 - [ ] Docu
-   - [ ] Layout simplify - Alex frist page - abstract and contents, header
+   - [ ] Simplify Layout - Alex frist page - abstract and contents, header
     - [ ] Related works Backpack - Alex
     - [ ] Related works Mooncular
-    - [ ] Intructions for Peter - Peter how to - Alex
+    - [ ] Instructions for Peter - Peter how to - Alex
         - [ ] pw user on Nano
         - [ ] pw wlan nano-bp
         - [ ] ip ssh
