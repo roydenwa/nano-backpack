@@ -10,8 +10,14 @@ def index():
 
 
 @app.route("/libs/<path:path>")
-def redirect_js_imports():
-    return redirect(url_for("static", filename="libqi-js/libs/"+path))
+def redirect_js_imports(path):
+    print(path)
+    if path.find("2") != -1:
+        new_path = "libqi-js/libs/qi/2/qi.js"
+    else:
+        new_path = "libqi-js/libs/" + path
+
+    return redirect(url_for("static", filename=new_path))
 
 
 if __name__ == "__main__":
