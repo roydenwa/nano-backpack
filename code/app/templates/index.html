@@ -5,7 +5,7 @@
   <link rel="shortcut icon" type="image/x-icon" href="https://static.community.services.sap/com-hdr/v5/393.180/shared-ui/1dx-assets/images/favicon.ico" />
   <title>nao-nano-backpack</title>
   <script id="sap-ui-bootstrap"
-    src="{{ url_for('static', filename='openui5-runtime-1.84.0/resources/sap-ui-core.js') }} "
+    src="{{ url_for('static', filename='openui5-runtime/resources/sap-ui-core.js') }} "
     data-sap-ui-theme="sap_fiori_3"
     data-sap-ui-libs="sap.m, sap.ui.layout, sap.tnt"
     data-sap-ui-resourceroots='{"nao-nano-backpack": "{{ url_for('static', filename='webapp') }}"}'
@@ -25,7 +25,7 @@
       font-size: 2em !important;
     }
   </style>
-  <script 
+  <script
     type="text/javascript"
     src="{{ url_for('static', filename='qi/qi2-msg.js') }}">
   </script>
