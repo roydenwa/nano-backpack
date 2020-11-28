@@ -1,3 +1,9 @@
+## build dockerimage with:
+`docker build -t "nano-backpack" .`
+
+## start dockerimage with:
+`docker run --rm -it -p 5000:5000 nano-backpack`
+
 ## start development server with:
 `python app.py`
 
