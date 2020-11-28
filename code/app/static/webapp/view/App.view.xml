@@ -61,57 +61,57 @@
       <l:BlockLayout background="Light">
         <l:BlockLayoutRow>
           <l:BlockLayoutCell>
-            <VBox 
-              alignItems="Center" 
-              width="100%" 
+            <VBox
+              alignItems="Center"
+              width="100%"
               height="100%">
               <HBox>
-                <Button 
-                  icon="sap-icon://arrow-top" 
-                  type="Emphasized" 
+                <Button
+                  icon="sap-icon://arrow-top"
+                  type="Emphasized"
                   press=".walkUp"/>
               </HBox>
               <HBox alignItems="Center">
-                <Button 
-                  icon="sap-icon://arrow-left" 
-                  type="Emphasized" 
+                <Button
+                  icon="sap-icon://arrow-left"
+                  type="Emphasized"
                   press=".walkLeft"/>
                 <Button enabled="false"/>
-                <Button 
-                  icon="sap-icon://arrow-right" 
-                  type="Emphasized" 
+                <Button
+                  icon="sap-icon://arrow-right"
+                  type="Emphasized"
                   press=".walkRight"/>
               </HBox>
               <HBox>
-                <Button 
-                  icon="sap-icon://arrow-bottom" 
-                  type="Emphasized" 
+                <Button
+                  icon="sap-icon://arrow-bottom"
+                  type="Emphasized"
                   press=".walkDown"/>
               </HBox>
             </VBox>
           </l:BlockLayoutCell>
           <l:BlockLayoutCell>
-          <VBox 
-            alignItems="Center" 
-            width="100%" 
+          <VBox
+            alignItems="Center"
+            width="100%"
             height="100%">
               <HBox>
-                <Button 
-                  text="Hello, World!" 
-                  type="Emphasized" 
+                <Button
+                  text="Hello, World!"
+                  type="Emphasized"
                   press=".callPrintMsg"/>
               </HBox>
               <HBox alignItems="Center">
                 <!--Button text="Let's go!" type="Emphasized"/-->
-                <Button 
-                  icon="sap-icon://post" 
+                <Button
+                  icon="sap-icon://post"
                   enabled="false"/>
                 <!--Button text="I am NAO!" type="Emphasized"/-->
               </HBox>
               <HBox>
-                <Button 
-                  text="I am NAO" 
-                  type="Emphasized" 
+                <Button
+                  text="I am NAO"
+                  type="Emphasized"
                   press=".sayIAm"/>
               </HBox>
             </VBox>
@@ -120,44 +120,48 @@
 
         <l:BlockLayoutRow>
           <l:BlockLayoutCell>
-            <Panel 
-              headerText="Where is NAO?" 
+            <Panel
+              headerText="Where is NAO?"
               expandable="true">
-							<l:HorizontalLayout class="sapUiSmallMargin">
-                <Input 
-                  id="naoip" 
+              <l:HorizontalLayout class="sapUiSmallMargin">
+                <Input
+                  id="naoip"
                   placeholder="Enter NAO's IP"
                   value="{
-			            	path : '/naoip',
-				            type : 'sap.ui.model.type.String'}"/>
-							</l:HorizontalLayout>
-						</Panel>
+                    path : '/naoip',
+                    type : 'sap.ui.model.type.String'}"/>
+                <Button
+                  text="Init NAO"
+                  type="Emphasized"
+                  press=".callInitQiSession('192.168.2.37')"/>
+              </l:HorizontalLayout>
+            </Panel>
           </l:BlockLayoutCell>
           <l:BlockLayoutCell>
-            <Panel 
-              headerText="Let's talk!" 
+            <Panel
+              headerText="Let's talk!"
               expandable="true">
-							<l:HorizontalLayout class="sapUiSmallMargin">
-                <Input 
-                  id="naospeak" 
+              <l:HorizontalLayout class="sapUiSmallMargin">
+                <Input
+                  id="naospeak"
                   placeholder="Enter NAO's thoughts"
                   value="{
-			            	path : '/naospeak',
-				            type : 'sap.ui.model.type.String'}"/>
-							</l:HorizontalLayout>
-						</Panel>
+                    path : '/naospeak',
+                    type : 'sap.ui.model.type.String'}"/>
+              </l:HorizontalLayout>
+            </Panel>
           </l:BlockLayoutCell>
         </l:BlockLayoutRow>
 
         <l:BlockLayoutRow>
           <l:BlockLayoutCell>
-            <Panel 
-              headerText="My POV" 
+            <Panel
+              headerText="My POV"
               expandable="true">
-							<l:HorizontalLayout class="sapUiSmallMargin">
+              <l:HorizontalLayout class="sapUiSmallMargin">
                 <Input placeholder="Here should be a video"/>
-							</l:HorizontalLayout>
-						</Panel>
+              </l:HorizontalLayout>
+            </Panel>
            </l:BlockLayoutCell>
         </l:BlockLayoutRow>
 
