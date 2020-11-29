@@ -4,8 +4,9 @@ Codebase for robotics practical project (MScTI_ROBP) in summer term 2020, Heidel
 # TODO:
 - [ ] Docu
    - [ ] Simplify Layout - Alex frist page - abstract and contents, header
+    - [X] Introduction - Alex / Royden
     - [ ] Related works Backpack - Alex
-    - [ ] Related works Mooncular - Royden 
+    - [X] Related works Mooncular - Royden 
     - [ ] Related Works optional: linux-wifi-hotstpot ? - Royden
     - [ ] Instructions for Peter - Peter how to - Alex
         - [ ] pw user on Nano
@@ -26,7 +27,7 @@ Codebase for robotics practical project (MScTI_ROBP) in summer term 2020, Heidel
    - [ ] ui5-datamodel ip, text params - Royden
    - [ ] Import Error qimessaging - Royden
    - [ ] update readme, clean repo 
-   - [ ] Docker images - Royden
+   - [X] Docker images - Royden
  
 ## ML Colab notebooks:
 * monocular depth estimation: https://colab.research.google.com/drive/1gyQloTjFFWqocp1bS43dUadsRt_RBJK7?usp=sharing
