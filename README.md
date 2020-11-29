@@ -4,9 +4,10 @@ Codebase for robotics practical project (MScTI_ROBP) in summer term 2020, Heidel
 # TODO:
 - [ ] Docu
    - [ ] Simplify Layout - Alex frist page - abstract and contents, header
+    - [ ] Abstract
     - [X] Introduction - Alex / Royden
     - [ ] Related works Backpack - Alex
-    - [X] Related works Mooncular - Royden 
+    - [X] Related works Monocular - Royden 
     - [ ] Related Works optional: linux-wifi-hotstpot ? - Royden
     - [ ] Instructions for Peter - Peter how to - Alex
         - [ ] pw user on Nano
@@ -19,7 +20,7 @@ Codebase for robotics practical project (MScTI_ROBP) in summer term 2020, Heidel
    - [ ] Mechanical design - Royden
    - [ ] Remote control NAO ~ UI5 - Royden / Alex
    - [ ] Depthestiation - python-decorator - single-frame <-> video - Royden
-   - [ ] Conclusion: - Alex 
+   - [ ] Conclusion: - Alex / Royden
       - [ ] benefit: easy start - dev env - UI for for testing
       - [ ] outlook: python base for depthestimation, JS base for more NAOqi-services
 - [ ] App
