@@ -29,13 +29,9 @@ def tf_inference(func, max_depth=1000, min_depth=10):
 
             predictions = model.predict(frame_tf, batch_size=2)
 
-            # needed? returns very small vals
-            depth_frame = np.clip(predictions/max_depth, min_depth, max_depth) / max_depth
-
             return frame, predictions
         else:
             return frame
-
     return func_wrapper
 
 
