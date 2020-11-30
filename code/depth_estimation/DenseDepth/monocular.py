@@ -23,10 +23,10 @@ def tf_inference(func, max_depth=1000, min_depth=10):
         frame = func(*args, **kwargs)
 
         if "model" in globals():
-            # get frame and convert for tf
-            frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-            frame = np.clip(np.asarray(frame, dtype=float) / 255, 0, 1)
-            frame_tf = frame[np.newaxis, ...]
+            # convert frame for tf and depth-model
+            frame_tf = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            frame_tf = np.clip(np.asarray(frame_tf, dtype=float) / 255, 0, 1)
+            frame_tf = frame_tf[np.newaxis, ...]
 
             # get predictions and convert back to img
             predictions = model.predict(frame_tf, batch_size=2)
@@ -85,7 +85,7 @@ if __name__ == "__main__":
             depth_frame = cv2.resize(depth_frame, (320, 240),
                                      interpolation=cv2.INTER_AREA)
 
-            #cv2.imshow("frame", frame[0])
+            cv2.imshow("frame", frame)
             cv2.imshow("depth frame", depth_frame)
         else:
             frame = video.get_frame()
