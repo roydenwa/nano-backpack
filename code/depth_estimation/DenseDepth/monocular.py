@@ -23,13 +23,22 @@ def tf_inference(func, max_depth=1000, min_depth=10):
         frame = func(*args, **kwargs)
 
         if "model" in globals():
+            # get frame and convert for tf
             frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             frame = np.clip(np.asarray(frame, dtype=float) / 255, 0, 1)
             frame_tf = frame[np.newaxis, ...]
 
+            # get predictions and convert back to img
             predictions = model.predict(frame_tf, batch_size=2)
+            depth_frame_raw = predictions[0, :, :, :]
+            depth_frame_raw *= 255.0 / depth_frame_raw.max()
+            depth_frame_raw = np.array(depth_frame_raw, dtype=np.uint8)
 
-            return frame, predictions
+            # colorize:
+            depth_frame_color = cv2.applyColorMap(depth_frame_raw,
+                                                  cv2.COLORMAP_PLASMA)
+
+            return frame, depth_frame_color
         else:
             return frame
     return func_wrapper
@@ -69,25 +78,17 @@ if __name__ == "__main__":
                         compile=False)
 
     while(True):
-        frame = video.get_frame()
-
         if "model" in globals():
-            # TODO: convert "raw" colormap to img
-            depth_frame_raw = frame[1][0, :, :, :]
-            depth_frame_raw *= 255.0 / depth_frame_raw.max()
-            depth_frame_raw = np.array(depth_frame_raw, dtype=np.uint8)
-
-            # colorize:
-            depth_frame_color = cv2.applyColorMap(depth_frame_raw,
-                                                  cv2.COLORMAP_PLASMA)
+            frame, depth_frame = video.get_frame()
 
             # upscale:
-            depth_frame_color = cv2.resize(depth_frame_color, (320, 240),
-                                           interpolation=cv2.INTER_AREA)
+            depth_frame = cv2.resize(depth_frame, (320, 240),
+                                     interpolation=cv2.INTER_AREA)
 
             #cv2.imshow("frame", frame[0])
-            cv2.imshow("depth frame", depth_frame_color)
+            cv2.imshow("depth frame", depth_frame)
         else:
+            frame = video.get_frame()
             cv2.imshow("frame", frame)
 
         if cv2.waitKey(1) & 0xFF == ord('q'):
