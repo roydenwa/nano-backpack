@@ -1,8 +1,6 @@
-import PIL
 import cv2
 import tensorflow as tf
 import numpy as np
-import matplotlib.pyplot as plt
 
 from dataclasses import dataclass, field
 from keras.models import load_model
