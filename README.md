@@ -3,8 +3,8 @@ Codebase for robotics practical project (MScTI_ROBP) in summer term 2020, Heidel
 
 # TODO:
 - [ ] Docu
-   - [ ] Simplify Layout - Alex frist page - abstract and contents, header
-    - [ ] Abstract
+   - [x] Simplify Layout - Alex frist page - abstract and contents, header
+    - [x] Abstract
     - [X] Introduction - Alex / Royden
     - [ ] Related works Backpack - Alex
     - [X] Related works Monocular - Royden 
