@@ -156,10 +156,10 @@
         <l:BlockLayoutRow>
           <l:BlockLayoutCell>
             <Panel
-              headerText="My POV"
+              headerText="Me"
               expandable="true">
               <l:HorizontalLayout class="sapUiSmallMargin">
-                <Input placeholder="Here should be a video"/>
+                <Image url="file://webapp/img/Image.png"/>
               </l:HorizontalLayout>
             </Panel>
            </l:BlockLayoutCell>

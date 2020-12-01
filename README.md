@@ -10,11 +10,11 @@ Codebase for robotics practical project (MScTI_ROBP) in summer term 2020, Heidel
     - [X] Related works Monocular - Royden 
     - [ ] Related Works optional: linux-wifi-hotstpot ? - Royden
     - [ ] Instructions for Peter - Peter how to - Alex
-        - [ ] pw user on Nano
-        - [ ] pw wlan nano-bp
-        - [ ] ip ssh
-        - [ ] standard ip NAO robot
-        - [ ] Table compatible Naoqi-SDKs (Offical: Python: no(not suitable for ARM), Javascript: qimessaging yes, qi2: yes, C++: not tested, Third-party: ROS: deprecated,   NodeJs~yorki: yes)
+        - [x] pw user on Nano
+        - [x] pw wlan nano-bp
+        - [x] ip ssh
+        - [x] standard ip NAO robot
+        - [x] Table compatible Naoqi-SDKs (Offical: Python: no(not suitable for ARM), Javascript: qimessaging yes, qi2: yes, C++: not tested, Third-party: ROS: deprecated,   NodeJs~yorki: yes)
         - [ ] Development Environment Nano:
         - [ ] how to use docker and python on Nano with NAO
    - [ ] Mechanical design - Royden
@@ -25,6 +25,7 @@ Codebase for robotics practical project (MScTI_ROBP) in summer term 2020, Heidel
       - [ ] outlook: python base for depthestimation, JS base for more NAOqi-services
 - [ ] App
    - [ ] NAOs view - placeholder img of NAO - Alex
+      - [ ] not visible, 404 not found
    - [ ] ui5-datamodel ip, text params - Royden
    - [ ] Import Error qimessaging - Royden
    - [ ] update readme, clean repo 
