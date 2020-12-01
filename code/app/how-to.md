@@ -4,7 +4,7 @@
 ## start dockerimage with:
 `docker run --rm -it -p 5000:5000 nano-backpack`
 
-## start development server with:
+## start development server without docker:
 `python app.py`
 
 ## Nice to know:
