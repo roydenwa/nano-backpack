@@ -4,7 +4,7 @@ sap.ui.define([
     return {
       createModel: function() {
         var oData = {
-          robotIp = ""
+          "robotIp": ""
         }
         var oModel = new sap.ui.model.json.JSONModel(oData);
 
