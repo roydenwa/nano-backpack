@@ -73,11 +73,9 @@
                   press=".callPrintMsg"/>
               </HBox>
               <HBox alignItems="Center">
-                <!--Button text="Let's go!" type="Emphasized"/-->
                 <Button
                   icon="sap-icon://post"
                   enabled="false"/>
-                <!--Button text="I am NAO!" type="Emphasized"/-->
               </HBox>
               <HBox>
                 <Button
