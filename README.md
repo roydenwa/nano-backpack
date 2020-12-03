@@ -24,10 +24,9 @@ Codebase for robotics practical project (MScTI_ROBP) in summer term 2020, Heidel
       - [ ] benefit: easy start - dev env - UI for for testing
       - [ ] outlook: python base for depthestimation, JS base for more NAOqi-services
 - [ ] App
-   - [ ] NAOs view - placeholder img of NAO - Alex
-      - [ ] not visible, 404 not found
-   - [ ] ui5-datamodel ip, text params - Royden
-   - [ ] Import Error qimessaging - Royden
+   - [X] NAOs view - placeholder img of NAO - Alex
+   - [X] ui5-datamodel ip, text params - Royden
+   - [X] Import Error qimessaging - Royden
    - [ ] update readme, clean repo 
    - [X] Docker images - Royden
  
