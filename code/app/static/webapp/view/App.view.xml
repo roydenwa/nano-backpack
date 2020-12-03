@@ -6,37 +6,8 @@
   xmlns:l="sap.ui.layout"
   xmlns:core="sap.ui.core"
   xmlns:tnt="sap.tnt">
-  <App id="app" initialPage="page2">
+  <App id="app">
     <Page id="page1">
-      <customHeader>
-        <Toolbar design="Solid" class="customHeaderToolbar">
-          <core:Icon
-            src="sap-icon://sap-ui5"
-            size="2em"
-            color="darkorange"/>
-          <ToolbarSpacer/>
-          <Title text="Index" level="H3" class="customHeaderToolbarTitle"/>
-          <ToolbarSpacer/>
-          <MenuButton
-            icon="sap-icon://person-placeholder"
-            type="Emphasized">
-          <menu>
-            <Menu>
-              <MenuItem text="{/username}"/>
-              <MenuItem text="Logout" icon="sap-icon://log" />
-            </Menu>
-          </menu>
-          </MenuButton>
-        </Toolbar>
-      </customHeader>
-      <Button
-        icon="sap-icon://sap-ui5"
-        text="Go!"
-        press=".onPress"
-        type="Emphasized"
-        class="sapUiSmallMargin"/>
-    </Page>
-    <Page id="page2">
       <customHeader>
         <Toolbar design="Solid" class="customHeaderToolbar">
           <core:Icon

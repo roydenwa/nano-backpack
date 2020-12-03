@@ -7,15 +7,6 @@ sap.ui.define([
   "use strict";
 
   return Controller.extend("nao-nano-backpack.controller.App", {
-    onPress: function() {
-      MessageToast.show("Hello UI5!");
-      this.byId("app").to(this.byId("page2"));
-    },
-
-    goBack: function() {
-      this.byId("app").to(this.byId("page1"));
-    },
-
     onInit: function() {
       this.getView().setModel(models.createModel());
     },
@@ -35,11 +26,6 @@ sap.ui.define([
 
     callWalk: function(x, y, theta) {
       walk(x, y, theta);
-    },
-
-    onChange: function(oEvent) {
-      var bState = oEvent.getParameter("state");
-      this.byId("ready").setVisible(bState);
     }
   });
 
