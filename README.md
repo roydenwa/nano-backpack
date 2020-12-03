@@ -19,7 +19,7 @@ Codebase for robotics practical project (MScTI_ROBP) in summer term 2020, Heidel
         - [ ] how to use docker and python on Nano with NAO
    - [ ] Mechanical design - Royden
    - [ ] Remote control NAO ~ UI5 - Royden / Alex
-   - [ ] Depthestiation - python-decorator - single-frame <-> video - Royden
+   - [X] Depth estimation - python-decorator - single-frame <-> video - Royden
    - [ ] Conclusion: - Alex / Royden
       - [ ] benefit: easy start - dev env - UI for for testing
       - [ ] outlook: python base for depthestimation, JS base for more NAOqi-services
