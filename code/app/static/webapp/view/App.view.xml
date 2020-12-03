@@ -159,7 +159,7 @@
               headerText="Me"
               expandable="true">
               <l:HorizontalLayout class="sapUiSmallMargin">
-                <Image url="file://webapp/img/Image.png"/>
+                <Image src="/Image.png"/>
               </l:HorizontalLayout>
             </Panel>
            </l:BlockLayoutCell>
