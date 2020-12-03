@@ -33,6 +33,8 @@ Codebase for robotics practical project (MScTI_ROBP) in summer term 2020, Heidel
  
 ## ML Colab notebooks:
 * monocular depth estimation: https://colab.research.google.com/drive/1gyQloTjFFWqocp1bS43dUadsRt_RBJK7?usp=sharing
+* diagram for system overview: https://colab.research.google.com/drive/17LU7zdjKQaLcvlP8urdSHtBXtgi4b-lk?usp=sharing 
+## Report
+* Overleaf: https://www.overleaf.com/4935392816vjjswyvgnhcr
+  * Note: link sharing is active
 
-# Diagram: 
-- https://colab.research.google.com/drive/17LU7zdjKQaLcvlP8urdSHtBXtgi4b-lk?usp=sharing 
