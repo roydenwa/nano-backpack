@@ -40,24 +40,24 @@
                 <Button
                   icon="sap-icon://arrow-top"
                   type="Emphasized"
-                  press=".walkUp"/>
+                  press=".callWalk(0.1, 0, 0)"/>
               </HBox>
               <HBox alignItems="Center">
                 <Button
                   icon="sap-icon://arrow-left"
                   type="Emphasized"
-                  press=".walkLeft"/>
+                  press=".callWalk(0.1, 0, 1.5)"/>
                 <Button enabled="false"/>
                 <Button
                   icon="sap-icon://arrow-right"
                   type="Emphasized"
-                  press=".walkRight"/>
+                  press=".callWalk(0.1, 0, -1.5)"/>
               </HBox>
               <HBox>
                 <Button
                   icon="sap-icon://arrow-bottom"
                   type="Emphasized"
-                  press=".walkDown"/>
+                  press=".callWalk(-0.1, 0, 0)"/>
               </HBox>
             </VBox>
           </l:BlockLayoutCell>
@@ -83,7 +83,7 @@
                 <Button
                   text="I am NAO"
                   type="Emphasized"
-                  press=".sayIAm"/>
+                  press=".callSpeak('I am NAO')"/>
               </HBox>
             </VBox>
           </l:BlockLayoutCell>
@@ -135,16 +135,6 @@
             </Panel>
            </l:BlockLayoutCell>
         </l:BlockLayoutRow>
-
-        <l:BlockLayoutRow>
-          <l:BlockLayoutCell>
-            <Button
-              text="Back to start"
-              type="Emphasized"
-              press=".goBack"/>
-          </l:BlockLayoutCell>
-        </l:BlockLayoutRow>
-
       </l:BlockLayout>
     </Page>
   </App>
