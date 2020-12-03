@@ -1,5 +1,6 @@
-var testMsg = "imported msg";
 var session;
+var testMsg = "imported msg";
+var robotIp = "192.168.2.37";
 
 function printMsg() {
     console.log(testMsg + " from external func");
@@ -16,7 +17,7 @@ function speak(msg) {
     });
   }, function() {
     console.log("disconnected");
-  });
+  }, robotIp);
 }
 
 function walk(x, y, theta) {
@@ -31,7 +32,7 @@ function walk(x, y, theta) {
     });
   }, function() {
     console.log("disconnected");
-  });
+  }, robotIp);
 }
 
 // experimental to share session over global var
