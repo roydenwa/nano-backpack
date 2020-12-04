@@ -3,5 +3,6 @@
 # model files:
 **.h5
 
-# local openui5-runtime
-openui5-runtime-*
+# local dependencies:
+**/openui5-runtime
+**/libqi-js
