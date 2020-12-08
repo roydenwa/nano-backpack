@@ -4,6 +4,7 @@ a Nvidia Jetson Nano development board to the robot and thereby enhances the com
 putational capabilities of the system. The corresponding software architecture includes
 a webapp to control the robot and allows an easy start into the development of further
 applications.
+
 This project was part of the Robotics Practical class (MScTI_ROBP) in summer term 2020 @ Heidelberg University.
 
 ## Setup:
@@ -56,6 +57,7 @@ This project was part of the Robotics Practical class (MScTI_ROBP) in summer ter
 </details>
 <details><summary><b>Run Docker image and connect to wifi-hotspot to see webapp with other devices</b></summary>
 
+Start Docker image with interactive shell:
     ```sh
     sudo docker run --rm -it -p 80:80 "nano-backpack"
     ```
