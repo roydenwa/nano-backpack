@@ -9,7 +9,7 @@ This project was part of the Robotics Practical class (MScTI_ROBP) in summer ter
 ## Setup:
 <details><summary><b>Install and setup linux-wifi-hotspot on Jetson Nano</b></summary>
 
-1. Install depencendiecs:
+1. Install dependencies:
 
     ```sh
     sudo apt install -y libgtk-3-dev build-essential gcc g++ pkg-config make hostapd
@@ -32,7 +32,31 @@ This project was part of the Robotics Practical class (MScTI_ROBP) in summer ter
     systemctl enable create_ap
     ```
 </details>
-<details><summary><b>Clone this repo and build Docker Image:</b></summary>
+<details><summary><b>Clone this repo and build Docker Image</b></summary>
+1. Clone:
+    ```sh
+    git clone 
+    ```
+2. Navigate to nano-backpack/src/app/ and build Docker image with:
+    ```sh
+    sudo docker build -t "nano-backpack" .
+    ```
+</details>
+<details><summary><b>Install and run dnsmasq</b></summary>
+1. Install dnsmasq:
+    ```sh
+    apt install dnsmasq
+    ```
+2. Run provided bash script to setup a subnet:
+    ```sh
+    sudo bash run_dnsmasq.sh
+    ```
+</details>
+<details><summary><b>Run Docker image and connect to wifi-hotspot to see webapp with other devices</b></summary>
+    ```sh
+    sudo docker run --rm -it -p 80:80 "nano-backpack"
+    ```
+    The webapp should now be visible at `192.168.12.1` if you are connected to the previously created wifi hotspot.
 </details>
 
 ## TODO:
@@ -51,10 +75,10 @@ This project was part of the Robotics Practical class (MScTI_ROBP) in summer ter
         - [x] Table compatible Naoqi-SDKs (Offical: Python: no(not suitable for ARM), Javascript: qimessaging yes, qi2: yes, C++: not tested, Third-party: ROS: deprecated,   NodeJs~yorki: yes)
         - [ ] Development Environment Nano:
         - [x] how to use docker and python on Nano with NAO
-   - [ ] Mechanical design - Royden
-   - [ ] Remote control NAO ~ UI5 - Royden / Alex
+   - [X] Mechanical design - Royden
+   - [X] Remote control NAO ~ UI5 - Royden / Alex
    - [X] Depth estimation - python-decorator - single-frame <-> video - Royden
-   - [ ] Conclusion: - Alex / Royden
+   - [X] Conclusion: - Alex / Royden
       - [ ] benefit: easy start - dev env - UI for for testing
       - [ ] outlook: python base for depthestimation, JS base for more NAOqi-services
 - [ ] App
