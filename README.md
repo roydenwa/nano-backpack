@@ -2,8 +2,7 @@
 <img src="report/nano-backpack.jpg" width="300" align="right"/>
 
 Nano-backpack is an open hardware add-on for the humanoid robot NAO. It adds
-a Nvidia Jetson Nano development board to the robot and thereby enhances the com-
-putational capabilities of the system. The corresponding software architecture includes
+a Nvidia Jetson Nano development board to the robot and thereby enhances the computational capabilities of the system. The corresponding software architecture includes
 a webapp to control the robot and allows an easy start into the development of further
 applications.
 
