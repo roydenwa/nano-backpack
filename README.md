@@ -1,4 +1,6 @@
 # Nano-backpack for NAO robot
+<img src="report/nano-backpack.jpg" width="300" align="right"/>
+
 Nano-backpack is an open hardware add-on for the humanoid robot NAO. It adds
 a Nvidia Jetson Nano development board to the robot and thereby enhances the com-
 putational capabilities of the system. The corresponding software architecture includes
@@ -58,9 +60,9 @@ This project was part of the Robotics Practical class (MScTI_ROBP) in summer ter
 <details><summary><b>Run Docker image and connect to wifi-hotspot to see webapp with other devices</b></summary>
 
 Start Docker image with interactive shell:
-    ```sh
+    `
     sudo docker run --rm -it -p 80:80 "nano-backpack"
-    ```
+    `
 The webapp should now be visible at `192.168.12.1` if you are connected to the previously created wifi hotspot.
 </details>
 
