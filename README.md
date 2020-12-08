@@ -33,6 +33,7 @@ This project was part of the Robotics Practical class (MScTI_ROBP) in summer ter
     ```
 </details>
 <details><summary><b>Clone this repo and build Docker Image</b></summary>
+
 1. Clone:
     ```sh
     git clone 
@@ -43,6 +44,7 @@ This project was part of the Robotics Practical class (MScTI_ROBP) in summer ter
     ```
 </details>
 <details><summary><b>Install and run dnsmasq</b></summary>
+
 1. Install dnsmasq:
     ```sh
     apt install dnsmasq
@@ -53,10 +55,11 @@ This project was part of the Robotics Practical class (MScTI_ROBP) in summer ter
     ```
 </details>
 <details><summary><b>Run Docker image and connect to wifi-hotspot to see webapp with other devices</b></summary>
+
     ```sh
     sudo docker run --rm -it -p 80:80 "nano-backpack"
     ```
-    The webapp should now be visible at `192.168.12.1` if you are connected to the previously created wifi hotspot.
+The webapp should now be visible at `192.168.12.1` if you are connected to the previously created wifi hotspot.
 </details>
 
 ## TODO:
