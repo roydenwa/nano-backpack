@@ -39,7 +39,7 @@ This project was part of the Robotics Practical class (MScTI_ROBP) in summer ter
 
 1. Clone:
     ```sh
-    git clone 
+    git clone https://github.com/roydenwa/nano-backpack.git
     ```
 2. Navigate to nano-backpack/src/app/ and build Docker image with:
     ```sh
@@ -65,6 +65,15 @@ Start Docker image with interactive shell:
     `
 The webapp should now be visible at `192.168.12.1` if you are connected to the previously created wifi hotspot.
 </details>
+ 
+## License and credits
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+
+This repo is built upon other open-source contributions:
+
+* CAD models are partially based on [NAO-backpack](https://github.com/uchile-robotics/nao-backpack).
+* The wifi hotspot is created with [linux-wifi-hotspot](https://github.com/lakinduakash/linux-wifi-hotspot).
+* The unfinished concept for monocular depth estimation is based on [DenseDepth](https://github.com/ialhashim/DenseDepth).
 
 ## TODO:
 - [ ] Docu
@@ -94,11 +103,3 @@ The webapp should now be visible at `192.168.12.1` if you are connected to the p
    - [X] Import Error qimessaging - Royden
    - [ ] update readme, clean repo 
    - [X] Docker images - Royden
- 
-## ML Colab notebooks:
-* monocular depth estimation: https://colab.research.google.com/drive/1gyQloTjFFWqocp1bS43dUadsRt_RBJK7?usp=sharing
-* diagram for system overview: https://colab.research.google.com/drive/17LU7zdjKQaLcvlP8urdSHtBXtgi4b-lk?usp=sharing 
-## Report
-* Overleaf: https://www.overleaf.com/4935392816vjjswyvgnhcr
-  * Note: link sharing is active
-
