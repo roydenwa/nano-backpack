@@ -1,7 +1,41 @@
 # Nano-backpack for NAO robot
-Codebase for robotics practical project (MScTI_ROBP) in summer term 2020, Heidelberg University
+Nano-backpack is an open hardware add-on for the humanoid robot NAO. It adds
+a Nvidia Jetson Nano development board to the robot and thereby enhances the com-
+putational capabilities of the system. The corresponding software architecture includes
+a webapp to control the robot and allows an easy start into the development of further
+applications.
+This project was part of the Robotics Practical class (MScTI_ROBP) in summer term 2020 @ Heidelberg University.
 
-# TODO:
+## Setup:
+<details><summary><b>Install and setup linux-wifi-hotspot on Jetson Nano</b></summary>
+
+1. Install depencendiecs:
+
+    ```sh
+    sudo apt install -y libgtk-3-dev build-essential gcc g++ pkg-config make hostapd
+    ```
+2. Clone repo and build:
+
+    ```sh
+    git clone https://github.com/lakinduakash/linux-wifi-hotspot
+    cd linux-wifi-hotspot
+
+    # build binaries
+    make
+
+    # install
+    sudo make install
+    ```
+3. Open application and create hotspot with `rndis0` preset
+4. Run linux-wifi-hotspot on every startup:
+    ```sh
+    systemctl enable create_ap
+    ```
+</details>
+<details><summary><b>Clone this repo and build Docker Image:</b></summary>
+</details>
+
+## TODO:
 - [ ] Docu
    - [x] Simplify Layout - Alex frist page - abstract and contents, header
     - [x] Abstract
